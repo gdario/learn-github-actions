@@ -6,4 +6,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python
-      - run: python gdario/learn-github-actions/src/test-utils.py
+      - run: python {gdario}/{learn-github-actions}/src/test-utils.py
