@@ -1,9 +1,14 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
+  example-job:
+    name: Save output
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python
-      - run: python ./src/test-utils.py
+      - shell: bash
+        run: |
+          expr 1 + 1 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v1
+        with:
+          name: output-log-file
+          path: output.log
